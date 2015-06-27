@@ -7,10 +7,6 @@ import org.openqa.selenium.WebElement;
 public abstract class AbstractPage {
 
 	protected WebDriver driver;
-	 
-    public AbstractPage(WebDriver driver) {
-        this.driver = driver;
-    }
  
     public void printText(String textBoxId, String text) {
         WebElement textBox = driver.findElement(By.id(textBoxId));
@@ -18,8 +14,8 @@ public abstract class AbstractPage {
         textBox.sendKeys(text);
     }
  
-    public void click(String id) {
-        WebElement button = driver.findElement(By.id(id));
+    public void click(String control) {
+        WebElement button = driver.findElement(By.xpath(control));
         button.click();
     }
 	

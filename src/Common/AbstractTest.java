@@ -9,14 +9,6 @@ public class AbstractTest {
 
     protected WebDriver driver;
 
-    @BeforeClass
-    public void setUp() {
-        driver = new FirefoxDriver();
-    }
 
-    @AfterClass
-    public void tearDown() {
-        driver.close();
-    }
-	
+    
 }
