@@ -39,11 +39,20 @@ public class TC_JOOMLA_ARTICLE_002 {
 				//Open New Article page
 				NewArticlePage newart = navpage.OpenNewArt();
 				
-				//Enter name
-				ArticlePage saveart = newart.createnewart("ThienHoangfhj1", "HoangThien");
+				//save article with name
+				ArticlePage saveart = newart.createnewart("TH", "HoangThien");
 				
-				//Navigate to Create article page
+				//Navigate to Article page from Article Page
+				saveart.NavigateArticle();
 				
+				//Filter article
+				saveart.FilterArticle("TH");
+				
+				//Open  edit Article
+				saveart.OpenEditArticle();
+				
+				//save article with edit name
+				newart.createnewart("TH1234", "HoangThien1");
 				
 				
 				//verify create contact successfully

@@ -18,5 +18,19 @@ public abstract class AbstractPage {
         WebElement button = driver.findElement(By.xpath(control));
         button.click();
     }
+    
+    public void navigateMenuBar(String strMenuBar)
+    {
+
+    String linkName = ".//*[@id='menu']//a[contains(text(),\"{0}\")]";
+    String [] names = strMenuBar.split(">");
+
+    for(int i = 0; i<=names.length-1;i++)
+    {
+     String link = linkName.replace("{0}", names[i]);
+     driver.findElement(By.xpath(link)).click();
+    }
+    }
+  	
 	
 }
