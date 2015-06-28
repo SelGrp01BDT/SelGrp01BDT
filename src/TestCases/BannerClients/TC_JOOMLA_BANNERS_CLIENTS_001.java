@@ -1,7 +1,5 @@
 package TestCases.BannerClients;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -24,7 +22,7 @@ public class TC_JOOMLA_BANNERS_CLIENTS_001 extends AbstractTest {
 
 	@AfterTest
 	public void tearDown() {
-		BrowserExecution.closeJoomla();
+		BrowserExecution.closeJoomla(driver);
 	}
 
 	@Test
@@ -34,10 +32,11 @@ public class TC_JOOMLA_BANNERS_CLIENTS_001 extends AbstractTest {
 		AdministratorPage adminpage = login.Do(Config.username_home,
 				Config.password_home);
 		BannerManagerClients bannermanager = adminpage.openBannerClients();
-		bannermanager.createNewClient("baton", "baton", "baton1211@gmail.com", "none", "saveandclose");
-
+		bannermanager.createNewClient(username, contactname, email, "none", "saveandclose");
 		verifyTextPresent(driver, "Client successfully saved");
-
 	}
 
+	private String username = getUniqueString("baton");
+	private String contactname = "baton";
+	private String email = "baton@lg.com";
 }

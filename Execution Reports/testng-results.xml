@@ -2,16 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="15123" started-at="2015-06-26T11:29:14Z" finished-at="2015-06-26T11:29:29Z">
+  <suite name="Default suite" duration-ms="17829" started-at="2015-06-28T11:15:03Z" finished-at="2015-06-28T11:15:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="15123" started-at="2015-06-26T11:29:14Z" finished-at="2015-06-26T11:29:29Z">
-      <class name="TestCases.Common.LoginTest">
-        <test-method status="PASS" signature="VerifyLogin()[pri:0, instance:TestCases.Common.LoginTest@31b7dea0]" name="VerifyLogin" duration-ms="15102" started-at="2015-06-26T18:29:14Z" finished-at="2015-06-26T18:29:29Z">
+    <test name="Default test" duration-ms="17829" started-at="2015-06-28T11:15:03Z" finished-at="2015-06-28T11:15:20Z">
+      <class name="TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@c1fdc4]" name="setUp" is-config="true" duration-ms="8718" started-at="2015-06-28T18:15:03Z" finished-at="2015-06-28T18:15:11Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyLogin -->
-      </class> <!-- TestCases.Common.LoginTest -->
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verify_create_client()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@c1fdc4]" name="verify_create_client" duration-ms="9082" started-at="2015-06-28T18:15:11Z" finished-at="2015-06-28T18:15:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_create_client -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@c1fdc4]" name="tearDown" is-config="true" duration-ms="19" started-at="2015-06-28T18:15:20Z" finished-at="2015-06-28T18:15:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

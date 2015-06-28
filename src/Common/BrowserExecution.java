@@ -3,9 +3,6 @@ package Common;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-
-import Pages.LoginPage;
 
 public class BrowserExecution {
 
@@ -21,11 +18,8 @@ public class BrowserExecution {
 		driver.manage().window().maximize();
 	}
 	
-	public static void closeJoomla()
+	public static void closeJoomla(WebDriver driver)
 	{
-		driver.quit();
+		driver.close();
 	}
-	
-	
-
 }
