@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 import Common.AbstractTest;
 import Common.Config;
 import Pages.AdministratorPage;
+import Pages.BM_NewClientPage;
 import Pages.BannerManagerClients;
 import Pages.LoginPage;
 
@@ -31,20 +32,26 @@ public class TC_JOOMLA_BANNERS_CLIENTS_003 extends AbstractTest {
 	@Test
 	public void verify_create_client() throws Exception {
 		
+		// Administrator page
 		LoginPage login = new LoginPage(driver);
 		AdministratorPage adminpage = login.Do(Config.username_home,
 				Config.password_home);
+		
+		// Banner Manager page
 		BannerManagerClients bannermanager = adminpage.openBannerClients();
-		bannermanager.createNewClient(username, contactname, email, "Unpublished", "saveandclose");
+		
+		// Banner Manager: Add New Client
+		BM_NewClientPage bmAddNew = bannermanager.goToAddClient(driver);
+
+		// Return Banner Manager page
+		bannermanager = bmAddNew.createNewClient(clientname, contactname, email, "Unpublished", "saveandclose");
 		verifyTextPresent(driver, "Client successfully saved");
 		
-		bannermanager.selectClientToEdit(username);
-		bannermanager.clickToolbarButton("Publish");
-		
+		bannermanager.publishClient(contactname);
 		verifyTextPresent(driver, "1 client successfully published");
 	}
 	
-	private String username = getUniqueString("baton");
-	private String contactname = "baton";
+	private String clientname = getUniqueString("baton");
+	private String contactname = getUniqueString("ct");
 	private String email = "baton@lg.com";
 }

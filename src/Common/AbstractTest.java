@@ -19,6 +19,7 @@ public class AbstractTest {
 		}
 	}
 	
+	// Generate a unique string
 	public static String getUniqueString(String basestring) {
 		
 		int day, month, year;

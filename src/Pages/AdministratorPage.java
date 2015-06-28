@@ -13,6 +13,11 @@ public class AdministratorPage {
     { 
         this.driver = driver;
  
+        // Check that we're on the right page.
+        if (!(driver.getTitle().contains("Administration"))) {
+            throw new IllegalStateException("This is not the Administrations page");
+        }
+        
     }
 	
 	// returns LoginPage PageObject

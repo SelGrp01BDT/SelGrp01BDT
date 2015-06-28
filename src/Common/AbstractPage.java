@@ -3,6 +3,7 @@ package Common;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
 public abstract class AbstractPage {
 
@@ -32,5 +33,10 @@ public abstract class AbstractPage {
     }
     }
   	
+    public void selectdropDownListItem(By dropdowlist, String item) {
+		WebElement dropDownListBox = driver.findElement(dropdowlist);
+		Select clickItem = new Select(dropDownListBox);
+		clickItem.selectByVisibleText(item);
+    }
 	
 }
