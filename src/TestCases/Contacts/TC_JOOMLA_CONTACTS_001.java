@@ -59,7 +59,6 @@ public class TC_JOOMLA_CONTACTS_001 {
 			contactspage= contactpage.CreateNewContact("Test Contact 4", "- - Park Site");
 			
 			// verify create contact successfully
-			
 			contactspage.IsTextPresent("Contact successfully saved");
 			
 		}

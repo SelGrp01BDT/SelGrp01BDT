@@ -49,7 +49,6 @@ public class AdministratorPage {
     }
 	
     private String try1;
-    
     private String ComponentsXpath = ".//*[@id='menu']/li[5]/a";
     private String ContactsXpath = ".//*[@id='menu']/li[5]/ul/li[2]/a";
     

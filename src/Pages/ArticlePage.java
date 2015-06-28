@@ -19,9 +19,22 @@ public NewArticlePage OpenNewArt(){
 
 	//3. return ArticlePage PageObject
 	return new NewArticlePage(driver);
-
-	
 }
 
+public boolean IsTextPresent(String textToBeVerified)
+{
+try
+      {
+      if (driver.findElement(By.xpath("//*[contains(.,'" + textToBeVerified + "')]")) != null)   
+    	  return true;
+      else 
+    	  return false;
+
+} 
+catch (Exception ex)
+{
+return false;
+}	
+}
 
 }
