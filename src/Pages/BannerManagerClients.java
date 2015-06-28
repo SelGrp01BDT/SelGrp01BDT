@@ -58,7 +58,10 @@ public class BannerManagerClients extends AbstractPage{
 	}
 	
 	public void publishClient(String contactname) throws InterruptedException {
-		selectdropDownListItem(cbo_filter, "Unpublished");
+//		selectdropDownListItem(cbo_filter, "Unpublished");
+		WebElement dropDownListBox = driver.findElement(cbo_filter);
+		Select clickItem = new Select(dropDownListBox);
+		clickItem.selectByVisibleText("Unpublished");
 		selectClientToEdit(contactname);
 		clickToolbarButton("Publish");
 	}
