@@ -50,6 +50,11 @@ public ArticlePage OpenEditArticle(){
 	return this;
 }
 
+public ArticlePage PublishArticle(){
+	driver.findElement(By.xpath(PublishbtnXpath)).click();	
+	return this;
+}
+
 public boolean IsTextPresent(String textToBeVerified)
 {
 try
@@ -70,4 +75,5 @@ private String FilterbtnXpath = "//input[@id='filter_search']";
 private String SearchbtnXpath = "//div[@class='filter-search fltlft']//button[contains(text(),'Search')]";
 private String CkbXpath = "//input[@id='cb0']";
 private String EditbtnXpath = "//li[@id='toolbar-edit']//span[@class='icon-32-edit']";
+private String PublishbtnXpath = "//li[@id='toolbar-publish']//span[@class='icon-32-publish']";
 }

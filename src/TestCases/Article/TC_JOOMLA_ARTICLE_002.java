@@ -3,35 +3,35 @@ package TestCases.Article;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import Common.AbstractTest;
+import Common.BrowserExecution;
+import Common.Config;
 import Pages.AdministratorPage;
 import Pages.ArticlePage;
 import Pages.LoginPage;
 import Pages.NewArticlePage;
 
-public class TC_JOOMLA_ARTICLE_002 {
+	public class TC_JOOMLA_ARTICLE_002 extends AbstractTest {
+		 
+		@BeforeTest
+		public void setUp() throws InterruptedException {
+		driver = new FirefoxDriver();
+		BrowserExecution.navigateJoomla(driver);
+		}
 
-	public static WebDriver driver;
-	 
-	@Test
-	public static void CreateArticle() {
-		
-		// instantiate FirefoxDriver and navigate to Joomla
-			
-	            driver = new FirefoxDriver();
-				driver.manage().window().maximize();
+		@AfterTest
+		public void tearDown() {
+		BrowserExecution.closeJoomla(driver);
+		}
+		@Test
+		public void Verify_updte_article() throws Exception {
+				LoginPage login = new LoginPage(driver);
+				AdministratorPage adminpage = login.Do(Config.username_home,Config.password_home);
 				
-				// navigate to joomla
-				driver.navigate().to(
-						"http://192.168.190.135/Joomla_2.5.28/administrator/index.php");
-				;
-
-				// instantiate LoginPage
-				LoginPage loginpage = new LoginPage(driver);
-
-				// Login.Do returns the AdministratorPage PageObject
-				AdministratorPage adminpage = loginpage.Do("Selenium_Team1", "123456");
 				
 				// Navigate to Article page from Administrator page
 				ArticlePage navpage = adminpage.NavigateArticle();
@@ -40,32 +40,28 @@ public class TC_JOOMLA_ARTICLE_002 {
 				NewArticlePage newart = navpage.OpenNewArt();
 				
 				//save article with name
-				ArticlePage saveart = newart.createnewart("TH", "HoangThien");
+				ArticlePage saveart = newart.createnewart(title_name, body_text);
 				
 				//Navigate to Article page from Article Page
 				saveart.NavigateArticle();
 				
 				//Filter article
-				saveart.FilterArticle("TH");
+				saveart.FilterArticle(title_name);
 				
 				//Open  edit Article
 				saveart.OpenEditArticle();
 				
 				//save article with edit name
-				newart.createnewart("TH1234", "HoangThien1");
-				
-				
+				newart.createnewart(title_nam_edit, body_text);
+								
 				//verify create contact successfully
 				saveart.IsTextPresent("Article successfully saved");
 	}
-	
-	
-	@AfterMethod
-	public void afterMethod() {
-					  
-	// Close the driver
-		driver.quit();
-	 }
+		
+		private String title_name = getUniqueString("thienhoang");
+		private String body_text = "thienhoang";
+		private String title_nam_edit = getUniqueString("thienhoang1");
+		
+		}
 	    
-	  }
-	 
+

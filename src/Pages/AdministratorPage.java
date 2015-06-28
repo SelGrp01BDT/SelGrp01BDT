@@ -56,7 +56,7 @@ public class AdministratorPage {
     	driver.findElement(ComponentsmenuXpath).click();
     	Actions actions = new Actions(driver);
     	WebElement mainMenu = driver.findElement(BannerXpath);
-    	actions.moveToElement(mainMenu).perform();;
+    	actions.moveToElement(mainMenu).perform();
     	driver.findElement(BannerClientsXpath).click();
     	
     	return new BannerManagerClients(driver);
@@ -65,7 +65,6 @@ public class AdministratorPage {
     private By ComponentsmenuXpath = By.xpath(".//*[@id='menu']/li[5]/a");
     private By BannerXpath = (By.xpath(".//*[@id='menu']/li[5]/ul/li[1]/a"));
     private By BannerClientsXpath = By.xpath(".//*[@id='menu-com-banners']/li[3]/a");
-    
     private String ComponentsXpath = ".//*[@id='menu']/li[5]/a";
     private String ContactsXpath = ".//*[@id='menu']/li[5]/ul/li[2]/a";
     
