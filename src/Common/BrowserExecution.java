@@ -13,7 +13,7 @@ public class BrowserExecution {
 	protected String testUrl, browser;
 	
 	public static void navigateJoomla(WebDriver driver) {
-		driver.get(url_home);
+		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 	}

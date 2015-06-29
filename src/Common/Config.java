@@ -7,7 +7,7 @@ public class Config {
 
 	public static String url_home = "http://localhost/JoomlaTest/administrator/index.php";
 	public static String url = "http://192.168.190.135/Joomla_2.5.28/administrator/index.php";
-	public static String username_home = "admin";
+	public static String username_home = "Selenium_Team1";
 	public static String password_home = "123456";
 
 	public static void OpenSite(String url) {
