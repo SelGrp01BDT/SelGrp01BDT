@@ -4,8 +4,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import Common.AbstractPage;
+import Common.AbstractTest;
 
-public class ContactsPage {
+
+public class ContactsPage extends AbstractPage{
 	private WebDriver driver;
 	
 	public ContactsPage(WebDriver driver) {
@@ -36,35 +39,23 @@ public class ContactsPage {
 	return false;
 	}	
 	}
-    
-	// public ContactPage selectContactToEdit(String contactname) throws InterruptedException {
-		
-	//	driver.findElement(By.xpath("//table/tbody/tr/td/a[contains(text(),'" + contactname + "')]")).click();		
-	//	return new ContactPage(driver);
-
-	//}
 	
-	//public void searchContact(String searchtext)
-	//{
-	//	WebElement txtbox = driver.findElement(By.xpath(filterTxtboxXpath));
-	//	txtbox.click();
-	//	txtbox.clear();
-	//	txtbox.sendKeys(searchtext);
-	//	driver.findElement(By.xpath(filterbuttonXpath)).click();
-		
-	//}
 	
-	 public ContactPage OpenEditContactPage()
+	 public ContactPage OpenEditContactPage(String contactname)
 	    {
-	        // 1. click New icon
-	    	driver.findElement(By.xpath(firstRowLinkXpath)).click();
-	    	
-	    	// 2. return ContactPage PageObject
+	        
+			searchItem(driver, filterTxtboxXpath, filterbuttonXpath,contactname);
+		    driver.findElement(By.xpath(firstRowLinkXpath)).click();
 	    	return new ContactPage(driver);
 	    }
 	
+	public void 
+	 
+	 
 	private String newIconXpath = ".//*[@id='toolbar-new']/a/span";
 	private String firstRowLinkXpath = ".//*[@id='adminForm']/table/tbody/tr[1]/td[2]/a";
+	private String filterTxtboxXpath = ".//*[@id='filter_search']";
+	private String filterbuttonXpath = ".//*[@id='filter-bar']/div[1]/button[1]";
 
 	///private String NotificationLblXpath = ".//*[@id='system-message']/dd/ul/li";
 }

@@ -21,15 +21,7 @@ public class AbstractTest {
 	}
 	
 	
-	// Search action
-	public static void searchItem(WebDriver driver, String txtboxXpath,String buttonXpath, String searchtext)
-	{
-		WebElement txtbox = driver.findElement(By.xpath(txtboxXpath));
-		txtbox.clear();
-		txtbox.sendKeys(searchtext);
-		driver.findElement(By.xpath(buttonXpath)).click();
-		
-	}
+
 	
 	
 	// Generate a unique string

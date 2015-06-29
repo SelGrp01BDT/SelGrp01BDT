@@ -39,4 +39,23 @@ public abstract class AbstractPage {
 		clickItem.selectByVisibleText(item);
     }
 	
+	// Search action
+	public static void searchItem(WebDriver driver, String txtboxXpath,String buttonXpath, String searchtext)
+	{
+		WebElement txtbox = driver.findElement(By.xpath(txtboxXpath));
+		txtbox.clear();
+		txtbox.sendKeys(searchtext);
+		driver.findElement(By.xpath(buttonXpath)).click();
+		
+	}
+	
+	public static void publishItem(WebDriver driver, String itemName,String publishIconXpath)
+	{
+		
+		
+		
+		WebElement publishIcon = driver.findElement(By.xpath(publishIconXpath));
+		publishIcon.click();
+		
+	}
 }
