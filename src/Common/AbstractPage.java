@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public abstract class AbstractPage {
 
-	protected WebDriver driver;
+	protected static WebDriver driver;
  
     public void printText(String textBoxId, String text) {
         WebElement textBox = driver.findElement(By.id(textBoxId));

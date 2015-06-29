@@ -58,7 +58,6 @@ public class BannerManagerClients extends AbstractPage{
 	}
 	
 	public void publishClient(String contactname) throws InterruptedException {
-//		selectdropDownListItem(cbo_filter, "Unpublished");
 		WebElement dropDownListBox = driver.findElement(cbo_filter);
 		Select clickItem = new Select(dropDownListBox);
 		clickItem.selectByVisibleText("Unpublished");
@@ -95,6 +94,12 @@ public class BannerManagerClients extends AbstractPage{
 		driver.findElement(txt_search).sendKeys(searchtext);
 		driver.findElement(btn_search).click();
 	}
+	
+    public void selectStatus(String item) {
+    	WebElement dropDownListBox = driver.findElement(cbo_filter);
+		Select clickItem = new Select(dropDownListBox);
+		clickItem.selectByVisibleText(item);
+    }
 	
 	private By txt_clientname = By.xpath("//*[@id='jform_name']");
 	private By txt_contactname = By.xpath("//*[@id='jform_contact']");

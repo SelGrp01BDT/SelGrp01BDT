@@ -38,10 +38,17 @@ private WebDriver driver;
 		String ctname = driver.findElement(txt_contactname).getText();
 		ctname.equals(contactname);
 	}
+	
+	public void verifyClientStatus(String status) {
+		
+		String clientstatus = driver.findElement(cbo_status).getText();
+		clientstatus.equals(status);
+	}
 
 	private By txt_clientname = By.xpath("//*[@id='jform_name']");
 	private By txt_contactname = By.xpath("//*[@id='jform_contact']");
 	private By txt_email = By.xpath("//*[@id='jform_email']");
 	private By btn_save_close = By.xpath("//*[@id='toolbar-save']/a/span");
 	private By btn_save = By.xpath("//*[@id='toolbar-apply']/a/span");
+	private By cbo_status = By.xpath(".//*[@id='jform_state']");
 }
