@@ -12,27 +12,40 @@ public class ContactPage {
         this.driver = driver;
     }
     
-    public ContactsPage CreateNewContact(String name, String category)
+    public ContactsPage CreateNewContact(String name, String category, String status)
     {
         // 1. Input Name, Category
-    	driver.findElement(By.xpath(NameTextXpath)).sendKeys(name);
-    	//Select select = new Select(driver.findElement(By.xpath(CategoryCbbXpath)));
-    	//select.deselectAll();
-    	//select.selectByVisibleText(category);
+    	driver.findElement(By.xpath(nameTextXpath)).clear();
+    	driver.findElement(By.xpath(nameTextXpath)).sendKeys(name);
+
+        // 2. Select Category
     	
-    	WebElement comboBox = driver.findElement(By.xpath(CategoryCbbXpath));
-    	Select selectedValue = new Select(comboBox);
-    	selectedValue.selectByVisibleText(category);
-   
+    	if (!category.isEmpty())
+    	{
+    		WebElement comboBox = driver.findElement(By.xpath(categoryCbbXpath));
+    		Select selectedValue = new Select(comboBox);
+    		selectedValue.selectByVisibleText(category);
+    	}
+    	
+    	// 2. Select Status
+    	
+    	if (!status.isEmpty())
+    	{
+    		WebElement comboBox = driver.findElement(By.xpath(statusCbbXpath));
+    		Select selectedValue = new Select(comboBox);
+    		selectedValue.selectByVisibleText(status);
+    	}
+    	
     	// 2. Click Save&Close button
-    	driver.findElement(By.xpath(SaveCloseBtnXpath)).click();
+    	driver.findElement(By.xpath(saveCloseBtnXpath)).click();
     	
     	 	
     	// 3. return ContactsPage PageObject
     	return new ContactsPage(driver);
     }
     
-	private String NameTextXpath = ".//*[@id='jform_name']";
-	private String CategoryCbbXpath = ".//*[@id='jform_catid']";
-	private String SaveCloseBtnXpath = ".//*[@id='toolbar-save']/a";
+	private String nameTextXpath = ".//*[@id='jform_name']";
+	private String categoryCbbXpath = ".//*[@id='jform_catid']";
+	private String statusCbbXpath = ".//*[@id='jform_published']";
+	private String saveCloseBtnXpath = ".//*[@id='toolbar-save']/a";
 }

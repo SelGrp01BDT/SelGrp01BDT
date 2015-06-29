@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class AbstractTest {
 
@@ -18,6 +19,18 @@ public class AbstractTest {
 			throw new Exception (text + " (is not present)");
 		}
 	}
+	
+	
+	// Search action
+	public static void searchItem(WebDriver driver, String txtboxXpath,String buttonXpath, String searchtext)
+	{
+		WebElement txtbox = driver.findElement(By.xpath(txtboxXpath));
+		txtbox.clear();
+		txtbox.sendKeys(searchtext);
+		driver.findElement(By.xpath(buttonXpath)).click();
+		
+	}
+	
 	
 	// Generate a unique string
 	public static String getUniqueString(String basestring) {
