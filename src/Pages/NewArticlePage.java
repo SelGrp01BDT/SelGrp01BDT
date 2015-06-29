@@ -4,7 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-public class NewArticlePage {
+
+import Common.AbstractPage;
+public class NewArticlePage extends AbstractPage {
 
 			private WebDriver driver;
 
@@ -14,13 +16,15 @@ public class NewArticlePage {
 
 		}
 		
-	public ArticlePage createnewart (String Titlename, String Textbody ) {
+	public ArticlePage createnewart (String Titlename, String Textbody, String Category, String Status ) {
 		
 		driver.findElement(By.xpath(TitleXpath)).sendKeys(Titlename);
 		
 		//Select from category list box
-		Select select = new Select(driver.findElement(By.xpath(CategoryXpath)));
-		select.selectByVisibleText("- - Fruit Shop Site");
+		Select category = new Select(driver.findElement(By.xpath(CategoryXpath)));
+		category.selectByVisibleText(Category);
+		Select status = new Select(driver.findElement(By.xpath(StatusXpath)));
+		status.selectByVisibleText(Status);
 		
 		//enter text to Text area
 		WebElement bodyIframe = driver.findElement(By.tagName("iframe"));
@@ -41,5 +45,6 @@ public class NewArticlePage {
 	private String TitleXpath = "//input[@id='jform_title']"; 
 	private String CategoryXpath = "//select[@id='jform_catid']";
 	private String SavebntXpath = "//div[@id='toolbar']//span[@class='icon-32-save']";
+	private String StatusXpath= "//*[@id='jform_state']";
 
 }

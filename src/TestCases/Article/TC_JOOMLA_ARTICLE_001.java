@@ -13,7 +13,7 @@ import Pages.ArticlePage;
 import Pages.LoginPage;
 import Pages.NewArticlePage;
  
-public class TC_JOOMLA_ARTICLE_001 extends AbstractTest {
+public class TC_JOOMLA_ARTICLE_001 extends AbstractTest{
  
 	@BeforeTest
 	public void setUp() throws InterruptedException {
@@ -37,17 +37,17 @@ public class TC_JOOMLA_ARTICLE_001 extends AbstractTest {
 			NewArticlePage newart = articlepage.OpenNewArt();
 			
 			//Enter name
-			ArticlePage saveart = newart.createnewart(title_name, body_text);
+			newart.createnewart(title_name, body_text, category, status);
 			
 			//verify create contact successfully
 			verifyTextPresent(driver, "Article successfully saved");
-			
-			
 			verifyTextPresent(driver, title_name);
 			
 }				
 	private String title_name = getUniqueString("thienhoang");
 	private String body_text = "thienhoang";
+	private String category = "- Sample Data-Articles";
+	private String status= "Unpublished";
     
   }
  

@@ -21,5 +21,11 @@ public class BrowserExecution {
 	public static void closeJoomla(WebDriver driver)
 	{
 		driver.close();
+
+		try {
+		Thread.sleep(5000);
+		driver.quit();
+		} catch (Exception e) {
+		}
 	}
 }

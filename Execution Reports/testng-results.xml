@@ -1,54 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="19886" started-at="2015-06-28T17:36:49Z" finished-at="2015-06-28T17:37:09Z">
+  <suite name="Default suite" duration-ms="21630" started-at="2015-06-29T14:10:25Z" finished-at="2015-06-29T14:10:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="19886" started-at="2015-06-28T17:36:49Z" finished-at="2015-06-28T17:37:09Z">
+    <test name="Default test" duration-ms="21630" started-at="2015-06-29T14:10:25Z" finished-at="2015-06-29T14:10:47Z">
       <class name="TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@c1fdc4]" name="setUp" is-config="true" duration-ms="9248" started-at="2015-06-29T00:36:49Z" finished-at="2015-06-29T00:36:58Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@2ac1fdc4]" name="setUp" is-config="true" duration-ms="8191" started-at="2015-06-29T21:10:25Z" finished-at="2015-06-29T21:10:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="verify_create_client()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@c1fdc4]" name="verify_create_client" duration-ms="10604" started-at="2015-06-29T00:36:58Z" finished-at="2015-06-29T00:37:09Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at Common.AbstractPage.selectdropDownListItem(AbstractPage.java:37)
-	at Pages.BannerManagerClients.publishClient(BannerManagerClients.java:61)
-	at TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003.verify_create_client(TC_JOOMLA_BANNERS_CLIENTS_003.java:50)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:648)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
-	at org.testng.TestNG.run(TestNG.java:1009)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="verify_create_client()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@2ac1fdc4]" name="verify_create_client" duration-ms="13291" started-at="2015-06-29T21:10:33Z" finished-at="2015-06-29T21:10:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verify_create_client -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@c1fdc4]" name="tearDown" is-config="true" duration-ms="20" started-at="2015-06-29T00:37:09Z" finished-at="2015-06-29T00:37:09Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestCases.BannerClients.TC_JOOMLA_BANNERS_CLIENTS_003@2ac1fdc4]" name="tearDown" is-config="true" duration-ms="130" started-at="2015-06-29T21:10:47Z" finished-at="2015-06-29T21:10:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

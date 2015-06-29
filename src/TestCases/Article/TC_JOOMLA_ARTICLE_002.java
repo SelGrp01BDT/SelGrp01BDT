@@ -32,33 +32,32 @@ import Pages.NewArticlePage;
 				
 				
 				// Navigate to Article page from Administrator page
-				ArticlePage navpage = adminpage.NavigateArticle();
+				ArticlePage artpage = adminpage.NavigateArticle();
 								
 				//Open New Article page
-				NewArticlePage newart = navpage.OpenNewArt();
+				NewArticlePage newart = artpage.OpenNewArt();
 				
 				//save article with name
-				ArticlePage saveart = newart.createnewart(title_name, body_text);
-				
-				//Navigate to Article page from Article Page
-				saveart.NavigateArticle();
+				newart.createnewart(title_name, body_text, category, status);
 				
 				//Filter article
-				saveart.FilterArticle(title_name);
+				artpage.FilterArticle(title_name);
 				
-				//Open  edit Article
-				saveart.OpenEditArticle();
+								//Open  edit Article
+				artpage.OpenEditArticle();
 				
 				//save article with edit name
-				newart.createnewart(title_nam_edit, body_text);
+				newart.createnewart(title_name_edit, body_text, category, status);
 								
 				//verify create contact successfully
-				saveart.IsTextPresent("Article successfully saved");
+				artpage.IsTextPresent("Article successfully saved");
 	}
 		
 		private String title_name = getUniqueString("thienhoang");
 		private String body_text = "thienhoang";
-		private String title_nam_edit = getUniqueString("thienhoang1");
+		private String title_name_edit = getUniqueString("thienhoang1");
+		private String category = "- Sample Data-Articles";
+		private String status= "Unpublished";
 		
 		}
 	    

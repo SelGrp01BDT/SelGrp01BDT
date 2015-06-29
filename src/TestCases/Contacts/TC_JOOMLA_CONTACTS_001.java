@@ -46,6 +46,7 @@ public class TC_JOOMLA_CONTACTS_001 extends AbstractTest {
 		// verify create contact successfully
 					
 		verifyTextPresent(driver, "Contact successfully saved");
+		verifyTextPresent(driver, contactname);
 		
 		
 	}
