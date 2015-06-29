@@ -49,13 +49,17 @@ public class ContactsPage extends AbstractPage{
 	    	return new ContactPage(driver);
 	    }
 	
-	public void 
+	public void publishContact(String contactname)
+	{
+		searchItem(driver, filterTxtboxXpath, filterbuttonXpath, contactname);
+		publishItem(driver, publishIconXpath);
+	}
 	 
 	 
 	private String newIconXpath = ".//*[@id='toolbar-new']/a/span";
 	private String firstRowLinkXpath = ".//*[@id='adminForm']/table/tbody/tr[1]/td[2]/a";
 	private String filterTxtboxXpath = ".//*[@id='filter_search']";
 	private String filterbuttonXpath = ".//*[@id='filter-bar']/div[1]/button[1]";
-
+	private String publishIconXpath = ".//*[@id='toolbar-publish']/a/span";
 	///private String NotificationLblXpath = ".//*[@id='system-message']/dd/ul/li";
 }

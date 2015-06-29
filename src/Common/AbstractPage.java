@@ -49,10 +49,10 @@ public abstract class AbstractPage {
 		
 	}
 	
-	public static void publishItem(WebDriver driver, String itemName,String publishIconXpath)
+	public static void publishItem(WebDriver driver, String publishIconXpath)
 	{
 		
-		
+		driver.findElement(By.xpath(".//*[@id='cb0']")).click();
 		
 		WebElement publishIcon = driver.findElement(By.xpath(publishIconXpath));
 		publishIcon.click();

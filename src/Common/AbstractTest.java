@@ -21,7 +21,16 @@ public class AbstractTest {
 	}
 	
 	
-
+	// Verify a item is published on a page
+	public static void verifyItemPublished(WebDriver driver, String itemname) throws Exception{
+		
+		
+		
+		//if (check == false) {
+		//throw new Exception (text + " (is not present)");
+		//}
+	}
+		
 	
 	
 	// Generate a unique string
