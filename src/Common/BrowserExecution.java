@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BrowserExecution {
 
-	public static String url_home = "http://localhost/JoomlaTest/administrator/index.php";
+	public static String url_home = "http://192.168.190.135/Joomla_2.5.28/administrator/index.php";
 	public static String url = "http://192.168.190.135/Joomla_2.5.28/administrator/index.php";
 	
 	protected static WebDriver driver;
