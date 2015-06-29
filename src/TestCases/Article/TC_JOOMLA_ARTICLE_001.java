@@ -1,45 +1,53 @@
 package TestCases.Article;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterTest;
 
+import Common.AbstractTest;
+import Common.BrowserExecution;
+import Common.Config;
 import Pages.AdministratorPage;
 import Pages.ArticlePage;
 import Pages.LoginPage;
 import Pages.NewArticlePage;
  
-public class TC_JOOMLA_ARTICLE_001 {
+public class TC_JOOMLA_ARTICLE_001 extends AbstractTest {
  
-public WebDriver driver;
- 
-@Test
-public static void CreateArticle() {
-	
-	// instantiate FirefoxDriver and navigate to Joomla
-			WebDriver driver = new FirefoxDriver();
-			driver.manage().window().maximize();
-			
-			// navigate to joomla
-			driver.navigate().to(
-					"http://192.168.190.135/Joomla_2.5.28/administrator/index.php");
-			;
+	@BeforeTest
+	public void setUp() throws InterruptedException {
+	driver = new FirefoxDriver();
+	BrowserExecution.navigateJoomla(driver);
+	}
 
-			// instantiate LoginPage
-			LoginPage loginpage = new LoginPage(driver);
-
-			// Login.Do returns the AdministratorPage PageObject
-			AdministratorPage adminpage = loginpage.Do("Selenium_Team1", "123456");
+	@AfterTest
+	public void tearDown() {
+	BrowserExecution.closeJoomla(driver);
+	}
+	@Test
+	public void Verify_create_new_article() throws Exception {
+			LoginPage login = new LoginPage(driver);
+			AdministratorPage adminpage = login.Do(Config.username_home,Config.password_home);
 			
-			ArticlePage navpage = adminpage.NavigateArticle();
+			// Navigate to Article page from Administrator page
+			ArticlePage articlepage = adminpage.NavigateArticle();
 							
-			NewArticlePage newart = navpage.OpenNewArt();
+			//Open New Article page
+			NewArticlePage newart = articlepage.OpenNewArt();
 			
-			ArticlePage saveart = newart.createnewart("ThienHoang", "HoangThien");
-					
-  // Close the driver
- 
+			//Enter name
+			ArticlePage saveart = newart.createnewart(title_name, body_text);
+			
+			//verify create contact successfully
+			verifyTextPresent(driver, "Article successfully saved");
+			
+			
+			verifyTextPresent(driver, title_name);
+			
+}				
+	private String title_name = getUniqueString("thienhoang");
+	private String body_text = "thienhoang";
     
   }
  
-}
