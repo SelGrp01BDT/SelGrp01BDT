@@ -2,74 +2,24 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13071" started-at="2015-06-28T03:37:58Z" finished-at="2015-06-28T03:38:11Z">
+  <suite name="Default suite" duration-ms="23625" started-at="2015-07-04T08:41:52Z" finished-at="2015-07-04T08:42:15Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13071" started-at="2015-06-28T03:37:58Z" finished-at="2015-06-28T03:38:11Z">
-      <class name="TestCases.Article.TC_JOOMLA_ARTICLE_001">
-        <test-method status="PASS" signature="CreateArticle()[pri:0, instance:TestCases.Article.TC_JOOMLA_ARTICLE_001@c1fdc4]" name="CreateArticle" duration-ms="12751" started-at="2015-06-28T10:37:58Z" finished-at="2015-06-28T10:38:11Z">
+    <test name="Default test" duration-ms="23625" started-at="2015-07-04T08:41:52Z" finished-at="2015-07-04T08:42:15Z">
+      <class name="TestCases.Contacts.TC_JOOMLA_CONTACTS_001">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="beforeMethod" is-config="true" duration-ms="6078" started-at="2015-07-04T15:41:52Z" finished-at="2015-07-04T15:41:58Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CreateArticle -->
-        <test-method status="FAIL" signature="afterMethod()[pri:0, instance:TestCases.Article.TC_JOOMLA_ARTICLE_001@c1fdc4]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-06-28T10:38:11Z" finished-at="2015-06-28T10:38:11Z">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[Process refused to die after 10 seconds, and couldn't taskkill it: Unable to find executable for: taskkill]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: Process refused to die after 10 seconds, and couldn't taskkill it: Unable to find executable for: taskkill
-	at org.openqa.selenium.os.ProcessUtils.killWinProcess(ProcessUtils.java:142)
-	at org.openqa.selenium.os.ProcessUtils.killProcess(ProcessUtils.java:81)
-	at org.openqa.selenium.os.UnixProcess$SeleniumWatchDog.destroyHarder(UnixProcess.java:248)
-	at org.openqa.selenium.os.UnixProcess$SeleniumWatchDog.access$2(UnixProcess.java:245)
-	at org.openqa.selenium.os.UnixProcess.destroy(UnixProcess.java:124)
-	at org.openqa.selenium.os.CommandLine.destroy(CommandLine.java:153)
-	at org.openqa.selenium.firefox.FirefoxBinary.quit(FirefoxBinary.java:259)
-	at org.openqa.selenium.firefox.internal.NewProfileExtensionConnection.quit(NewProfileExtensionConnection.java:202)
-	at org.openqa.selenium.firefox.FirefoxDriver$LazyCommandExecutor.quit(FirefoxDriver.java:376)
-	at org.openqa.selenium.firefox.FirefoxDriver.stopClient(FirefoxDriver.java:322)
-	at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:477)
-	at TestCases.Article.TC_JOOMLA_ARTICLE_001.afterMethod(TC_JOOMLA_ARTICLE_001.java:56)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:213)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:721)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:834)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1142)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
-	at org.testng.TestRunner.privateRun(TestRunner.java:771)
-	at org.testng.TestRunner.run(TestRunner.java:621)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:357)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:352)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:310)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:259)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1176)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1101)
-	at org.testng.TestNG.run(TestNG.java:1009)
-	at org.testng.remote.RemoteTestNG.run(RemoteTestNG.java:111)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:204)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:175)
-Caused by: java.lang.NullPointerException: Unable to find executable for: taskkill
-	at com.google.common.base.Preconditions.checkNotNull(Preconditions.java:250)
-	at org.openqa.selenium.os.UnixProcess.<init>(UnixProcess.java:62)
-	at org.openqa.selenium.os.CommandLine.<init>(CommandLine.java:38)
-	at org.openqa.selenium.os.WindowsUtils.killPID(WindowsUtils.java:172)
-	at org.openqa.selenium.os.ProcessUtils.killWinProcess(ProcessUtils.java:138)
-	... 37 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="CreateContacts()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="CreateContacts" duration-ms="17531" started-at="2015-07-04T15:41:58Z" finished-at="2015-07-04T15:42:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateContacts -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-04T15:42:15Z" finished-at="2015-07-04T15:42:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-      </class> <!-- TestCases.Article.TC_JOOMLA_ARTICLE_001 -->
+      </class> <!-- TestCases.Contacts.TC_JOOMLA_CONTACTS_001 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

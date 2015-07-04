@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="TestCases.Article.TC_JOOMLA_ARTICLE_001">
+      <class name="TestCases.Contacts.TC_JOOMLA_CONTACTS_001">
         <methods>
+          <include name="CreateContacts"/>
           <include name="afterMethod"/>
-          <include name="CreateArticle"/>
+          <include name="beforeMethod"/>
         </methods>
-      </class> <!-- TestCases.Article.TC_JOOMLA_ARTICLE_001 -->
+      </class> <!-- TestCases.Contacts.TC_JOOMLA_CONTACTS_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

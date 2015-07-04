@@ -20,6 +20,8 @@ import Pages.ContactPage;
 public class TC_JOOMLA_CONTACTS_001 {
 	
 	public static WebDriver driver;
+	public static String contactname = "Test Contact 777";
+	public static String category = "- - Park Site";
 	
 	  @BeforeMethod
 	  public void beforeMethod() {
@@ -41,13 +43,13 @@ public class TC_JOOMLA_CONTACTS_001 {
 			 
 	      
 			// navigate to joomla
-			driver.navigate().to("http://192.168.190.135/Joomla_2.5.28/administrator/index.php");
+			driver.navigate().to("http://localhost/Joomla/administrator/index.php");
 		
 			// instantiate LoginPage
 			LoginPage loginpage = new LoginPage(driver);
 
 			// Login.Do returns the AdministratorPage PageObject
-			AdministratorPage adminpage = loginpage.Do("Selenium_Team1", "123456");
+			AdministratorPage adminpage = loginpage.Do("admin", "admin");
 			
 			// Open Contacts Page
 			ContactsPage contactspage = adminpage.OpenContactsPage();
@@ -56,11 +58,13 @@ public class TC_JOOMLA_CONTACTS_001 {
 			ContactPage contactpage = contactspage.OpenContactPage();
 			
 			// Input Name, Category the click Save&Close button
-			contactspage= contactpage.CreateNewContact("Test Contact 4", "- - Park Site");
+			contactspage= contactpage.CreateNewContact(contactname, "- - Park Site");
 			
 			// verify create contact successfully
 			contactspage.IsTextPresent("Contact successfully saved");
 			
+			// verify create contact successfully
+			contactspage.IsTextPresent("Test Contact 4");
 		}
 
 	  @AfterMethod
