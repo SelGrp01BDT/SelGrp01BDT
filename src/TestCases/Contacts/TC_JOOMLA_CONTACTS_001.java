@@ -20,8 +20,9 @@ import Pages.ContactPage;
 public class TC_JOOMLA_CONTACTS_001 {
 	
 	public static WebDriver driver;
-	public static String contactname = "Test Contact 777";
+	public static String contactname = "Test Contact 1111";
 	public static String category = "- - Park Site";
+	public static String successlabel = "Contact successfully saved";
 	
 	  @BeforeMethod
 	  public void beforeMethod() {
@@ -58,13 +59,13 @@ public class TC_JOOMLA_CONTACTS_001 {
 			ContactPage contactpage = contactspage.OpenContactPage();
 			
 			// Input Name, Category the click Save&Close button
-			contactspage= contactpage.CreateNewContact(contactname, "- - Park Site");
+			contactspage= contactpage.CreateNewContact(contactname,category);
 			
 			// verify create contact successfully
-			contactspage.IsTextPresent("Contact successfully saved");
+			contactspage.IsTextPresent(successlabel);
 			
 			// verify create contact successfully
-			contactspage.IsTextPresent("Test Contact 4");
+			contactspage.IsTextPresent(contactname);
 		}
 
 	  @AfterMethod
@@ -72,7 +73,7 @@ public class TC_JOOMLA_CONTACTS_001 {
 		  
 		  // Close the driver
 		 
-		   
+		   driver.quit();
 		 
 		  }
 }

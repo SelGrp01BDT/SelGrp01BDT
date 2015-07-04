@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="23625" started-at="2015-07-04T08:41:52Z" finished-at="2015-07-04T08:42:15Z">
+  <suite name="Default suite" duration-ms="13625" started-at="2015-07-04T09:34:35Z" finished-at="2015-07-04T09:34:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="23625" started-at="2015-07-04T08:41:52Z" finished-at="2015-07-04T08:42:15Z">
+    <test name="Default test" duration-ms="13625" started-at="2015-07-04T09:34:35Z" finished-at="2015-07-04T09:34:49Z">
       <class name="TestCases.Contacts.TC_JOOMLA_CONTACTS_001">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="beforeMethod" is-config="true" duration-ms="6078" started-at="2015-07-04T15:41:52Z" finished-at="2015-07-04T15:41:58Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="beforeMethod" is-config="true" duration-ms="6141" started-at="2015-07-04T16:34:35Z" finished-at="2015-07-04T16:34:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="CreateContacts()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="CreateContacts" duration-ms="17531" started-at="2015-07-04T15:41:58Z" finished-at="2015-07-04T15:42:15Z">
+        <test-method status="PASS" signature="CreateContacts()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="CreateContacts" duration-ms="7468" started-at="2015-07-04T16:34:42Z" finished-at="2015-07-04T16:34:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateContacts -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-04T15:42:15Z" finished-at="2015-07-04T15:42:15Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:TestCases.Contacts.TC_JOOMLA_CONTACTS_001@1150435]" name="afterMethod" is-config="true" duration-ms="0" started-at="2015-07-04T16:34:49Z" finished-at="2015-07-04T16:34:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
