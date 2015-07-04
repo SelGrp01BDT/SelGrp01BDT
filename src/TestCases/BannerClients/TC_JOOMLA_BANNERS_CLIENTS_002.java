@@ -1,5 +1,7 @@
 package TestCases.BannerClients;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -12,8 +14,8 @@ import Pages.AdministratorPage;
 import Pages.BannerManagerClients;
 import Pages.LoginPage;
 
-public class TC_JOOMLA_BANNERS_CLIENTS_001 extends AbstractTest {
-	
+public class TC_JOOMLA_BANNERS_CLIENTS_002 extends AbstractTest {
+
 	@BeforeTest
 	public void setUp() throws InterruptedException {
 		driver = new FirefoxDriver();
@@ -26,17 +28,21 @@ public class TC_JOOMLA_BANNERS_CLIENTS_001 extends AbstractTest {
 	}
 
 	@Test
-	public void verify_create_new_client() throws Exception {
+	public void verify_create_client() throws Exception {
 
 		LoginPage login = new LoginPage(driver);
 		AdministratorPage adminpage = login.Do(Config.username_home,
 				Config.password_home);
 		BannerManagerClients bannermanager = adminpage.openBannerClients();
-		bannermanager.createNewClient(username, contactname, email, "none", "saveandclose");
+		bannermanager.createNewClient(username1, contactname, email, "none", "save");
 		verifyTextPresent(driver, "Client successfully saved");
-	}
+		
+		bannermanager.editClient(username2, contactname, email, "none", "saveandclose");
+		verifyTextPresent(driver, "Client successfully saved");
+	}	
 
-	private String username = getUniqueString("baton");
+	private String username1 = getUniqueString("baton");
+	private String username2 = getUniqueString("baton1211");
 	private String contactname = "baton";
 	private String email = "baton@lg.com";
 }

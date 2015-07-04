@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.Test;
 
+import Common.Config;
 import Pages.AdministratorPage;
 import Pages.LoginPage;
 
@@ -15,8 +16,7 @@ public class LoginTest {
 		WebDriver driver = new FirefoxDriver();
 
 		// navigate to joomla
-		driver.navigate().to(
-				"http://192.168.190.135/Joomla_2.5.28/administrator/index.php");
+		driver.navigate().to(Config.url_home);
 		;
 
 		// instantiate LoginPage
